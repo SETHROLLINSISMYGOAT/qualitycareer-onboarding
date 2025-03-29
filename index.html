@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QualityCareer Onboarding</title>
+    <style>
+        /* Style your form for better UX */
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            box-sizing: border-box;
+        }
+
+        .container {
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 600px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .logo {
+            width: 100%;
+            max-width: 450px;
+            margin-bottom: 20px;
+            display: block;
+            object-fit: contain;
+        }
+
+        .input-field {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+
+        .btn-login {
+            background: #4CAF50;
+            color: #fff;
+            padding: 12px;
+            border: none;
+            width: 100%;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .btn-login:hover {
+            background: #45a049;
+        }
+
+        .forgot-password {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .forgot-password a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+
+        .forgot-password a:hover {
+            text-decoration: underline;
+        }
+
+        .error-message {
+            color: red;
+            text-align: center;
+            display: none;
+        }
+
+        .form-container {
+            display: none;
+            margin-top: 20px;
+            width: 100%;
+            max-height: 500px;
+            overflow-y: auto;
+        }
+
+        label {
+            font-size: 16px;
+            margin-bottom: 8px;
+            color: #333;
+            display: block;
+        }
+
+        .checkbox-group {
+            margin: 10px 0;
+        }
+
+        .checkbox-group input {
+            margin-right: 8px;
+        }
+
+        .required {
+            color: red;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+
+            .input-field {
+                font-size: 14px;
+            }
+
+            .btn-login {
+                font-size: 14px;
+            }
+
+            .form-container input,
+            .form-container select,
+            .form-container button {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <img src="C:\Users\ghost\Downloads\sunnuArtboard 3.png" alt="Logo" class="logo">
+
+        <div class="error-message" id="error-message">
+            Invalid login ID or password. Please try again.
+        </div>
+
+        <div id="loginForm" class="login-form">
+            <label for="loginId">Login ID <span class="required">*</span></label>
+            <input type="text" id="loginId" name="loginId" class="input-field" required>
+
+            <label for="password">Password <span class="required">*</span></label>
+            <input type="password" id="password" name="password" class="input-field" required>
+
+            <button type="button" class="btn-login" onclick="validateLogin()">Login</button>
+
+            <div class="forgot-password">
+                <p>Forgot your password? <a href="https://wa.me/917382752900?text=I%20forgot%20my%20password%20for%20QualityCareer%20account" target="_blank">Contact us on WhatsApp</a></p>
+            </div>
+        </div>
+
+        <div class="form-container" id="mainForm">
+            <h2>QualityCareer Financial Services Onboarding</h2>
+            <form id="onboardingForm" action="https://script.google.com/macros/s/AKfycbztQdg2_bptKG8T7dMm2ws46CgA7ltIc9Chs_hEs26JwCAzUj4Tz7S5WT43NUnkWaCogw/exec" method="POST" onsubmit="handleSubmit(event)">
+                <label for="businessName">Business Name <span class="required">*</span></label>
+                <input type="text" name="businessName" class="input-field" required>
+
+                <label for="ownerName">Owner's Name <span class="required">*</span></label>
+                <input type="text" name="ownerName" class="input-field" required>
+
+                <label for="ownerEmail">Owner's Email Address <span class="required">*</span></label>
+                <input type="email" name="ownerEmail" class="input-field" required>
+
+                <label for="contactNumber">Contact Number <span class="required">*</span></label>
+                <input type="tel" name="contactNumber" class="input-field" required>
+
+                <label for="businessAddress">Business Address <span class="required">*</span></label>
+                <input type="text" name="businessAddress" class="input-field" required>
+
+                <label for="typeOfCenter">Type of Center <span class="required">*</span></label>
+                <select name="typeOfCenter" class="input-field" required>
+                    <option value="Internet Cafe">Internet Cafe</option>
+                    <option value="Mee Seva">Mee Seva</option>
+                    <option value="CSC Center">CSC Center</option>
+                    <option value="Kirana Store">Kirana Store</option>
+                    <option value="Marketing Agent">Marketing Agent</option>
+                    <option value="Others">Others</option>
+                </select>
+
+                <label for="idProof">Upload ID Proof (Aadhaar, PAN, etc.) <span class="required">*</span></label>
+                <input type="file" name="idProof" class="input-field" required>
+
+                <label for="passportSizePhoto">Upload Passport Size Photo <span class="required">*</span></label>
+                <input type="file" name="passportSizePhoto" class="input-field" required>
+
+                <label for="shopBanner">Upload Shop Banner</label>
+                <input type="file" name="shopBanner" class="input-field">
+
+                <label for="shopPhoto">Upload Shop Photo</label>
+                <input type="file" name="shopPhoto" class="input-field">
+
+                <label for="ownerImage">Upload Owner Image with Shop/Office Photo</label>
+                <input type="file" name="ownerImage" class="input-field">
+
+                <label>Select Financial Products to Offer <span class="required">*</span></label>
+                <div class="checkbox-group">
+                    <input type="checkbox" name="products" value="Credit Cards"> Credit Cards<br>
+                    <input type="checkbox" name="products" value="Zero Balance Accounts"> Zero Balance Accounts<br>
+                    <input type="checkbox" name="products" value="Loans"> Loans<br>
+                    <input type="checkbox" name="products" value="Demat Accounts"> Demat Accounts<br>
+                    <input type="checkbox" name="products" value="Shops/Internet Cafes/Mee Seva (Onboardings)"> Shops/Internet Cafes/Mee Seva (Onboardings)<br>
+                </div>
+
+                <div class="checkbox-group">
+                    <input type="checkbox" id="terms" name="terms" required>
+                    <label for="terms">I agree to the terms and conditions <span class="required">*</span></label>
+                </div>
+
+                <label for="digitalSignature">Digital Signature (type your name) <span class="required">*</span></label>
+                <input type="text" name="digitalSignature" class="input-field" required>
+
+                <label for="referredBy">Referred By <span class="required">*</span></label>
+                <input type="text" name="referredBy" class="input-field" required>
+
+                <button type="submit" class="btn-login">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function validateLogin() {
+            const correctLoginId = "123456";
+            const correctPassword = "123456";
+
+            const enteredLoginId = document.getElementById("loginId").value;
+            const enteredPassword = document.getElementById("password").value;
+
+            if (enteredLoginId === correctLoginId && enteredPassword === correctPassword) {
+                document.getElementById("loginForm").style.display = "none";
+                document.getElementById("mainForm").style.display = "block";
+            } else {
+                document.getElementById("error-message").style.display = "block";
+            }
+        }
+
+        function handleSubmit(event) {
+            event.preventDefault(); // Prevent the form from refreshing the page
+
+            const formData = new FormData(document.getElementById('onboardingForm'));
+
+            fetch('https://script.google.com/macros/s/AKfycbztQdg2_bptKG8T7dMm2ws46CgA7ltIc9Chs_hEs26JwCAzUj4Tz7S5WT43NUnkWaCogw/exec', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                alert('Form submitted successfully!');
+                window.location.reload(); // Reload page after submission
+            })
+            .catch(error => {
+                console.error('Error submitting form:', error);
+                alert('An error occurred. Please try again.');
+            });
+        }
+    </script>
+</body>
+</html>
